@@ -78,3 +78,10 @@
 .btn-animated:hover {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.14);
 }
+
+/* ── Mobile Utility ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mobile-full-width {
+    max-width: 100% !important;
+  }
+}

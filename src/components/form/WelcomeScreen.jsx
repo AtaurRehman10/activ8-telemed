@@ -226,6 +226,7 @@ export default function WelcomeScreen({ onStart }) {
           {/* Right — photo */}
           <motion.div
             {...fadeIn(0.35)}
+            className="mobile-full-width"
             style={{
               flex: "1 1 clamp(220px, 38%, 360px)",
               maxWidth: "min(360px, 100%)",
