@@ -37,6 +37,7 @@ export default function HormonesCTA() {
         {/* Background image */}
         <img
           alt=""
+          className="cta-bg-img"
           src={imgHormonesCtaBg}
           style={{
             position: 'absolute',
@@ -104,15 +105,15 @@ export default function HormonesCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
-            whileHover={{ scale: 1.06, y: -4 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => navigate('/form')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
-            className="btn-animated"
+            className="cta-btn"
             style={{
               alignSelf: 'flex-start',
-              padding: '0 32px',
+              padding: '0 40px',
               height: 60,
               background: btnHovered ? '#1f7a6f' : '#2a9d8f',
               borderRadius: 50,
@@ -120,7 +121,8 @@ export default function HormonesCTA() {
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'background 0.2s ease, box-shadow 0.2s ease',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 10px 20px rgba(42, 157, 143, 0.2)',
             }}
           >
             <span style={{ ...INT, fontWeight: 600, fontSize: 16, lineHeight: 1.2, letterSpacing: -0.32, color: '#fff', whiteSpace: 'nowrap' }}>
@@ -133,26 +135,67 @@ export default function HormonesCTA() {
 
       <style>{`
         /* Tablet */
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
           .cta-content {
             max-width: 70% !important;
-            padding: 48px 5% !important;
+            padding: 60px 5% !important;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .cta-content {
+            max-width: 85% !important;
+            padding: 48px 6% !important;
             gap: 20px !important;
           }
         }
+        
         /* Mobile */
         @media (max-width: 560px) {
           section:has(.cta-content) {
-            padding: 0 4% 56px !important;
+            padding: 0 4% 50px !important;
           }
           .cta-content {
             max-width: 100% !important;
-            padding: 40px 7% !important;
+            padding: 50px 20px !important;
             gap: 20px !important;
+            text-align: center !important;
+            align-items: center !important;
           }
-          .hormones-cta-mobile-overlay { display: block !important; }
+          .cta-content h2 {
+            font-size: 28px !important;
+            letter-spacing: -1px !important;
+          }
+          .cta-content p {
+            font-size: 16px !important;
+            line-height: 1.5 !important;
+          }
+          .cta-btn {
+            align-self: center !important;
+            width: 100% !important;
+            max-width: 300px;
+            padding: 16px 20px !important;
+            height: auto !important;
+            min-height: 56px !important;
+          }
+          .cta-btn span {
+            font-size: 13px !important;
+            letter-spacing: 0.5px !important;
+            white-space: normal !important;
+            text-align: center !important;
+            line-height: 1.3 !important;
+          }
+          .cta-bg-img {
+            width: 100% !important;
+            opacity: 0.5 !important;
+          }
+          .hormones-cta-mobile-overlay { 
+            display: block !important; 
+            background: rgba(218, 215, 210, 0.92) !important;
+          }
         }
       `}</style>
     </section>
+
   )
 }
