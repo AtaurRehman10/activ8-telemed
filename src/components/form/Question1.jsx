@@ -13,25 +13,25 @@ import {
 } from '../../assets'
 
 const fadeUp = (delay = 0) => ({
-  initial:    { opacity: 0, y: 30 },
-  animate:    { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, ease: 'easeOut', delay },
 })
 
 const fadeIn = (delay = 0) => ({
-  initial:    { opacity: 0 },
-  animate:    { opacity: 1 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
   transition: { duration: 0.7, ease: 'easeOut', delay },
 })
 
 const CARDS = [
-  { label: 'Male',              value: 0, icon: imgFormQ1MaleSymbol   },
-  { label: 'Female',            value: 1, icon: imgFormQ1FemaleSymbol  },
-  { label: 'Non-binary',        value: 2, icon: imgFormQ1NbSymbol, mask: imgFormQ1NbMask },
-  { label: 'Prefer not to say', value: 3, icon: imgFormQ1NoSymbol    },
+  { label: 'Male', value: 0, icon: imgFormQ1MaleSymbol },
+  { label: 'Female', value: 1, icon: imgFormQ1FemaleSymbol },
+  { label: 'Non-binary', value: 2, icon: imgFormQ1NbSymbol },
+  { label: 'Prefer not to say', value: 3, icon: imgFormQ1NoSymbol },
 ]
 
-function useTilt(max = 14) {
+function useTilt(max = 0) {
   const ref = useRef(null)
   const glowRef = useRef(null)
   const raf = useRef(null)
@@ -45,7 +45,7 @@ function useTilt(max = 14) {
       const x = e.clientX - r.left, y = e.clientY - r.top
       const nx = (x - r.width / 2) / (r.width / 2)
       const ny = (y - r.height / 2) / (r.height / 2)
-      el.style.transform = `perspective(600px) rotateX(${(-ny * max).toFixed(2)}deg) rotateY(${(nx * max).toFixed(2)}deg) scale3d(1.06,1.06,1.06)`
+      el.style.transform = `perspective(600px) rotateX(${(-ny * max).toFixed(2)}deg) rotateY(${(nx * max).toFixed(2)}deg) scale3d(1,1,1)`
       el.style.transition = 'transform 0.07s ease'
       if (glow) {
         glow.style.background = `radial-gradient(circle at ${((x / r.width) * 100).toFixed(1)}% ${((y / r.height) * 100).toFixed(1)}%, rgba(42,157,143,0.22) 0%, transparent 65%)`
@@ -183,8 +183,8 @@ export default function Question1({ onBack, onContinue }) {
                   onMouseMove={onMouseMove}
                   onMouseLeave={onMouseLeave}
                   style={{
-                    width: 'clamp(100px, 20%, 190px)',
-                    flex: '1 1 clamp(100px, 20%, 190px)',
+                    width: 'clamp(140px, 22.5%, 210px)',
+                    flex: '1 1 clamp(140px, 22.5%, 210px)',
                     background: '#fff',
                     borderRadius: 'clamp(16px, 2vw, 24px)',
                     border: isSelected ? '3px solid #2a9d8f' : '1px solid #6b7280',
@@ -199,8 +199,8 @@ export default function Question1({ onBack, onContinue }) {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 'clamp(8px, 1.2vw, 14px)',
-                    padding: 'clamp(16px, 2.5vw, 28px) clamp(10px, 1.5vw, 20px)',
+                    gap: 'clamp(12px, 2vw, 20px)',
+                    padding: 'clamp(24px, 3.5vw, 42px) clamp(12px, 2vw, 24px)',
                     position: 'relative',
                     boxSizing: 'border-box',
                   }}
@@ -208,39 +208,18 @@ export default function Question1({ onBack, onContinue }) {
                   {/* Spotlight glow overlay */}
                   <div ref={glowRef} style={{ position: 'absolute', inset: 0, borderRadius: 'inherit', pointerEvents: 'none', opacity: 0, zIndex: 10 }} />
 
-                  {/* Icon */}
-                  {card.mask ? (
-                    <div
-                      style={{
-                        width: 'clamp(36px, 5vw, 68px)',
-                        aspectRatio: '54/90',
-                        WebkitMaskImage: `url('${card.mask}')`,
-                        maskImage: `url('${card.mask}')`,
-                        WebkitMaskSize: 'contain',
-                        maskSize: 'contain',
-                        WebkitMaskPosition: 'center',
-                        maskPosition: 'center',
-                        WebkitMaskRepeat: 'no-repeat',
-                        maskRepeat: 'no-repeat',
-                        pointerEvents: 'none',
-                        flexShrink: 0,
-                      }}
-                    >
-                      <img src={card.icon} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                    </div>
-                  ) : (
-                    <img
-                      src={card.icon}
-                      alt=""
-                      style={{
-                        width: 'clamp(36px, 5vw, 68px)',
-                        height: 'clamp(36px, 5vw, 68px)',
-                        objectFit: 'contain',
-                        pointerEvents: 'none',
-                        flexShrink: 0,
-                      }}
-                    />
-                  )}
+                  <img
+                    src={card.icon}
+                    alt=""
+                    style={{
+                      width: 'clamp(24px, 5.5vw, 52px)',
+                      height: 'clamp(24px, 5.5vw, 52px)',
+                      objectFit: 'contain',
+                      pointerEvents: 'none',
+                      flexShrink: 0,
+                      zIndex: 1,
+                    }}
+                  />
 
                   {/* Label inside card */}
                   <span style={{
