@@ -166,8 +166,9 @@ export default function Process() {
         @media (max-width: 768px) {
           .process-step1-inner {
             flex-direction: column !important;
-            padding: 28px 24px !important;
-            gap: 24px !important;
+            padding: 40px 24px 0 !important;
+            gap: 32px !important;
+            max-height: none !important;
           }
 
           .process-step1-left, .process-step1-right {
@@ -175,17 +176,25 @@ export default function Process() {
             width: 100% !important;
             text-align: left !important;
             justify-content: flex-start !important;
+            align-self: flex-start !important;
           }
 
           .process-step1-p {
             text-align: left !important;
             max-width: 100% !important;
+            font-size: 16px !important;
           }
 
           .process-step1-img {
             flex: unset !important;
             width: 100% !important;
-            height: 260px !important;
+            height: 320px !important;
+            margin-bottom: 0 !important;
+            order: 3;
+          }
+
+          .process-step1-img img {
+            transform: scale(1.1) !important;
           }
         }
       `}</style>
