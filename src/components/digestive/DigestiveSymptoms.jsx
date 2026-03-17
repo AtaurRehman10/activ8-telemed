@@ -105,7 +105,12 @@ export default function DigestiveSymptoms() {
                 className="symptom-item-left"
                 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={VP} transition={{ duration: 0.6, ease: 'easeOut', delay }}
-                style={{ display: 'flex', alignItems: 'flex-start', gap: 16, justifyContent: 'flex-end' }}
+                whileHover={{ 
+                  y: -12, 
+                  scale: 1.05,
+                  transition: { type: 'spring', stiffness: 400, damping: 17 }
+                }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 16, justifyContent: 'flex-end', cursor: 'pointer' }}
               >
                 <p style={{ ...PJS, fontWeight: 500, fontSize: 'clamp(15px, 1.4vw, 20px)', lineHeight: 1.5, color: '#6b7280', margin: 0, textAlign: 'right' }}>
                   {text}
@@ -123,11 +128,17 @@ export default function DigestiveSymptoms() {
             <motion.div
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={VP} transition={{ duration: 0.7, ease: 'easeOut' }}
+              whileHover={{ 
+                y: -12, 
+                scale: 1.03,
+                transition: { type: 'spring', stiffness: 400, damping: 17 }
+              }}
               style={{
                 position: 'absolute', inset: 0,
                 overflow: 'hidden',
                 WebkitMaskImage: 'linear-gradient(to bottom, black 55%, transparent 92%)',
                 maskImage: 'linear-gradient(to bottom, black 55%, transparent 92%)',
+                cursor: 'pointer',
               }}
             >
               <img
@@ -145,7 +156,12 @@ export default function DigestiveSymptoms() {
                 key={i}
                 initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={VP} transition={{ duration: 0.6, ease: 'easeOut', delay }}
-                style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}
+                whileHover={{ 
+                  y: -12, 
+                  scale: 1.05,
+                  transition: { type: 'spring', stiffness: 400, damping: 17 }
+                }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 16, cursor: 'pointer' }}
               >
                 <img src={icon} alt="" style={{ width: 52, height: 52, objectFit: 'contain', flexShrink: 0 }} />
                 <p style={{ ...PJS, fontWeight: 500, fontSize: 'clamp(15px, 1.4vw, 20px)', lineHeight: 1.5, color: '#6b7280', margin: 0 }}>

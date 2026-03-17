@@ -48,33 +48,36 @@ export default function DigestiveProcess() {
             cardStyle={{ background: '#e7f4eb', borderRadius: 30, minHeight: 380 }}
             max={6} scale={1.02} glowColor="42,157,143" glowOpacity={0.15}
           >
-            <div
-              className="digestive-step1-inner"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '5%',
-                padding: '48px 56px',
-                boxSizing: 'border-box',
-              }}>
-              {/* Text */}
-              <div className="digestive-step1-text" style={{ flex: '1 1 40%', display: 'flex', flexDirection: 'column', gap: 20, position: 'relative', zIndex: 1 }}>
-                <h3 style={{ ...PJS, fontWeight: 700, fontSize: 'clamp(24px, 3vw, 40px)', lineHeight: 1.2, letterSpacing: -1.2, color: '#1f2937', margin: 0 }}>
-                  Take the Assessment
+            <div className="process-step1-inner" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '20px',
+              padding: '65px 8%',
+              boxSizing: 'border-box',
+              maxHeight: 450,
+            }}>
+              {/* Left: Headline */}
+              <div className="process-step1-left" style={{ flex: '1 1 30%', display: 'flex', justifyContent: 'flex-start', alignSelf: 'flex-start' }}>
+                <h3 style={{ ...PJS, fontWeight: 700, fontSize: 'clamp(32px, 4vw, 40px)', lineHeight: 1.05, letterSpacing: -2, color: '#1f2937', margin: 0, maxWidth: 320 }}>
+                  Take the <br /> Assessment
                 </h3>
-                <p className="digestive-step1-desc" style={{ ...PJS, fontWeight: 500, fontSize: 'clamp(15px, 1.4vw, 22px)', lineHeight: 1.5, letterSpacing: -0.5, color: '#6b7280', margin: 0, maxWidth: 380, alignSelf: 'flex-end', textAlign: 'right' }}>
-                  Describe your symptoms, diet, and what you&apos;ve tried so far. Takes about 2 minutes.
-                </p>
               </div>
 
-              {/* Images */}
-              <div className="digestive-step1-images" style={{ flex: '0 0 45%', position: 'relative', height: 380, zIndex: 1 }}>
+              {/* Center: Image */}
+              <div className="process-step1-img" style={{ flex: '1 1 45%', position: 'relative', height: 420, zIndex: 1, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', alignSelf: 'flex-end', marginBottom: -110 }}>
                 <img
                   alt=""
                   src={imgAppScreen}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.3)', transformOrigin: 'bottom center' }}
                 />
+              </div>
+
+              {/* Right: Description */}
+              <div className="process-step1-right" style={{ flex: '1 1 30%', display: 'flex', justifyContent: 'flex-end', alignSelf: 'flex-end' }}>
+                <p className="process-step1-p" style={{ ...PJS, fontWeight: 500, fontSize: 'clamp(18px, 1.8vw, 18px)', lineHeight: 1.3, letterSpacing: -0.6, color: '#6b7280', margin: 0, maxWidth: 360, textAlign: 'right' }}>
+                  Describe your symptoms, diet, and what you&apos;ve tried so far. Takes about 2 minutes.
+                </p>
               </div>
             </div>
           </TiltCard>
@@ -158,24 +161,40 @@ export default function DigestiveProcess() {
         </div>
       </div>
 
+      {/* Mobile responsive */}
       <style>{`
         @media (max-width: 768px) {
-          .digestive-step1-inner {
+          .process-step1-inner {
             flex-direction: column !important;
-            padding: 32px 24px !important;
-            gap: 24px !important;
+            padding: 40px 24px 0 !important;
+            gap: 32px !important;
+            max-height: none !important;
           }
-          .digestive-step1-text {
+
+          .process-step1-left, .process-step1-right {
             flex: unset !important;
             width: 100% !important;
-          }
-          .digestive-step1-desc {
+            text-align: left !important;
+            justify-content: flex-start !important;
             align-self: flex-start !important;
+          }
+
+          .process-step1-p {
             text-align: left !important;
             max-width: 100% !important;
+            font-size: 16px !important;
           }
-          .digestive-step1-images {
-            display: none !important;
+
+          .process-step1-img {
+            flex: unset !important;
+            width: 100% !important;
+            height: 320px !important;
+            margin-bottom: 0 !important;
+            order: 3;
+          }
+
+          .process-step1-img img {
+            transform: scale(1.1) !important;
           }
         }
       `}</style>
