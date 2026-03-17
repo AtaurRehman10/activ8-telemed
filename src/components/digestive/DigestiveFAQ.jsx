@@ -112,25 +112,30 @@ export default function DigestiveFAQ() {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-            whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
             onClick={() => navigate('/form')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             className="dfaq-btn-mobile"
             style={{
               display: 'none',
-              marginTop: 28,
-              padding: '0 28px',
-              height: 50,
+              marginTop: 36,
+              padding: '16px 24px',
+              minHeight: 56,
               background: btnHovered ? '#0d3a5c' : '#1b4d7a',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'background 0.08s ease',
+              transition: 'background 0.2s ease',
+              width: '100%',
+              maxWidth: 320,
+              alignSelf: 'center',
+              boxSizing: 'border-box',
+              textAlign: 'center'
             }}
           >
-            <span style={{ ...INT, fontWeight: 600, fontSize: 16, lineHeight: 1.2, letterSpacing: -0.32, color: '#fff', whiteSpace: 'nowrap' }}>
+            <span style={{ ...INT, fontWeight: 700, fontSize: 13, lineHeight: 1.3, letterSpacing: 0.5, color: '#fff', textTransform: 'uppercase' }}>
               START YOUR GUT HEALTH ASSESSMENT →
             </span>
           </motion.div>
