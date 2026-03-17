@@ -175,6 +175,21 @@ export default function Header() {
             </motion.div>
           </div>
         </div>
+
+        {/* Mobile: Horizontal Image Marquee (Visible only on <768px via CSS) */}
+        <div className="hero-collage-mobile">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            style={{ display: 'flex', gap: 12, width: 'max-content', padding: '10px 0' }}
+          >
+            {[imgHeroMain, imgHeroImg95, imgHeroImg96, imgHeroImg97, imgHeroImg98, imgHeroMain, imgHeroImg95, imgHeroImg96, imgHeroImg97, imgHeroImg98].map((img, idx) => (
+              <div key={idx} style={{ width: 140, height: 180, borderRadius: 16, overflow: 'hidden', flexShrink: 0 }}>
+                <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* ── Trust bar ── */}
@@ -218,8 +233,20 @@ export default function Header() {
 
       {/* ── Mobile responsive ── */}
       <style>{`
+        .hero-collage-mobile { display: none; }
+
         @media (max-width: 768px) {
           .hero-collage { display: none !important; }
+          .hero-collage-mobile { 
+            display: block !important; 
+            width: 100vw; 
+            margin-left: -5%; 
+            overflow: hidden; 
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            WebkitMaskImage: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            margin-bottom: 20px;
+          }
 
           .hero-nav {
             padding: 14px 5% !important;

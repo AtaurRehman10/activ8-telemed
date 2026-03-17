@@ -92,6 +92,20 @@ export default function CTA() {
             Take a 2-minute assessment and book your consultation with Ariel. No pressure, no gimmicks — just a real conversation about what&apos;s possible for your body.
           </motion.p>
 
+          <img
+            src={imgCtaBg}
+            alt="Real Plan"
+            className="cta-couple-mobile"
+            style={{
+              display: 'none',
+              width: '100%',
+              height: 'auto',
+              borderRadius: '20px',
+              objectFit: 'cover',
+              marginTop: '5px'
+            }}
+          />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -148,9 +162,20 @@ export default function CTA() {
             width: 100% !important;
             padding: 40px 7% !important;
             gap: 20px !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .cta-content h2, .cta-content p {
+            text-align: center !important;
+          }
+          .btn-animated {
+            align-self: center !important;
           }
           .cta-couple {
             display: none !important;
+          }
+          .cta-couple-mobile {
+            display: block !important;
           }
           .cta-gradient {
             background: #016ac5 !important;

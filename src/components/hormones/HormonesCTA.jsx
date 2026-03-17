@@ -100,6 +100,20 @@ export default function HormonesCTA() {
             Take a 2-minute assessment and find out if bio-identical hormone therapy can help you feel like yourself again.
           </motion.p>
 
+          <img
+            src={imgHormonesCtaBg}
+            alt="Hormones Fix"
+            className="cta-couple-mobile"
+            style={{
+              display: 'none',
+              width: '100%',
+              height: 'auto',
+              borderRadius: '20px',
+              objectFit: 'cover',
+              marginTop: '5px'
+            }}
+          />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +140,7 @@ export default function HormonesCTA() {
             }}
           >
             <span style={{ ...INT, fontWeight: 600, fontSize: 16, lineHeight: 1.2, letterSpacing: -0.32, color: '#fff', whiteSpace: 'nowrap' }}>
-              START YOUR HORMONE ASSESSMENT →
+              START YOUR ASSESSMENT →
             </span>
           </motion.div>
         </div>
@@ -165,10 +179,12 @@ export default function HormonesCTA() {
           .cta-content h2 {
             font-size: 28px !important;
             letter-spacing: -1px !important;
+            text-align: center !important;
           }
           .cta-content p {
             font-size: 16px !important;
             line-height: 1.5 !important;
+            text-align: center !important;
           }
           .cta-btn {
             align-self: center !important;
@@ -186,12 +202,13 @@ export default function HormonesCTA() {
             line-height: 1.3 !important;
           }
           .cta-bg-img {
-            width: 100% !important;
-            opacity: 0.5 !important;
+            display: none !important;
+          }
+          .cta-couple-mobile {
+            display: block !important;
           }
           .hormones-cta-mobile-overlay { 
-            display: block !important; 
-            background: rgba(218, 215, 210, 0.92) !important;
+            display: none !important; 
           }
         }
       `}</style>

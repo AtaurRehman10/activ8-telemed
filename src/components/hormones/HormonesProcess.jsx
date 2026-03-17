@@ -84,7 +84,7 @@ export default function HormonesProcess() {
         </motion.div>
 
         {/* ── Steps 2 + 3 side by side ── */}
-        <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+        <div className="process-side-wrapper" style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
 
           {/* Step 2 */}
           <motion.div {...slideUp(0.1)} style={{ flex: '1 1 calc(50% - 12px)', minWidth: 280 }}>
@@ -195,6 +195,13 @@ export default function HormonesProcess() {
 
           .process-step1-img img {
             transform: scale(1.1) !important;
+          }
+
+          .process-side-wrapper > div {
+            min-height: unset !important;
+          }
+          .process-side-wrapper > div [style*="min-height"] {
+            min-height: unset !important;
           }
         }
       `}</style>

@@ -104,6 +104,20 @@ export default function DigestiveCTA() {
             Take a 2-minute gut health assessment and book your consultation with Ariel. Let&apos;s find the root cause — not just another band-aid.
           </motion.p>
 
+          <img
+            src={imgDigestiveCtaBg}
+            alt="Healing"
+            className="cta-couple-mobile"
+            style={{
+              display: 'none',
+              width: '100%',
+              height: 'auto',
+              borderRadius: '20px',
+              objectFit: 'cover',
+              marginTop: '5px'
+            }}
+          />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +144,7 @@ export default function DigestiveCTA() {
             }}
           >
             <span style={{ ...INT, fontWeight: 600, fontSize: 16, lineHeight: 1.2, letterSpacing: -0.32, color: '#fff', whiteSpace: 'nowrap' }}>
-              START YOUR GUT HEALTH ASSESSMENT →
+              START YOUR ASSESSMENT →
             </span>
           </motion.div>
         </div>
@@ -169,10 +183,12 @@ export default function DigestiveCTA() {
           .cta-content h2 {
             font-size: 28px !important;
             letter-spacing: -1px !important;
+            text-align: center !important;
           }
           .cta-content p {
             font-size: 16px !important;
             line-height: 1.5 !important;
+            text-align: center !important;
           }
           .cta-btn {
             align-self: center !important;
@@ -190,12 +206,13 @@ export default function DigestiveCTA() {
             line-height: 1.3 !important;
           }
           .cta-bg-img {
-            width: 100% !important;
-            opacity: 0.5 !important;
+            display: none !important;
+          }
+          .cta-couple-mobile {
+            display: block !important;
           }
           .digestive-cta-mobile-overlay { 
-            display: block !important; 
-            background: rgba(218, 215, 210, 0.92) !important;
+            display: none !important; 
           }
         }
       `}</style>

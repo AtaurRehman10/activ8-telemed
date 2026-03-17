@@ -150,7 +150,7 @@ export default function Symptoms() {
               <img
                 alt=""
                 src={imgSymptomsCenter}
-                style={{ width: '100%', height: '130%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
               />
             </motion.div>
           </div>
@@ -228,17 +228,49 @@ export default function Symptoms() {
       {/* Mobile responsive */}
       <style>{`
         @media (max-width: 768px) {
-          .symptoms-center-img { display: none !important; }
+          .symptoms-center-img { 
+            display: flex !important; 
+            order: 2 !important;
+            flex: unset !important;
+            width: 100% !important;
+            min-height: unset !important;
+            height: 350px !important;
+            margin: 20px 0 !important;
+          }
+          
+          .symptoms-center-img > div {
+            position: relative !important;
+            width: 100% !important;
+            height: 100% !important;
+            border-radius: 24px !important;
+            WebkitMaskImage: none !important;
+            maskImage: none !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+          }
+
+          .symptoms-center-img img {
+            height: 100% !important;
+            object-position: center 15% !important;
+          }
 
           .symptoms-columns {
+            display: flex !important;
             flex-direction: column !important;
-            gap: 16px !important;
+            gap: 24px !important;
           }
 
           .symptoms-col {
             flex: unset !important;
             width: 100% !important;
             gap: 24px !important;
+          }
+
+          .symptoms-col:first-child {
+            order: 1 !important;
+          }
+          
+          .symptoms-col:last-child {
+            order: 3 !important;
           }
 
           .symptom-item-left {
