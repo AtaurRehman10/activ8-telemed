@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    /* Ensure the document height can grow beyond 100% */
+    height: auto;
+    min-height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    width: 100%;
+    /* Use min-height: 100vh to ensure it covers at least the viewport */
+    min-height: 100vh;
+    /* Only hide horizontal overflow to allow vertical scrolling */
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    width: 100%;
+    position: relative;
+    /* Ensure root expands to its children */
+    min-height: 100vh;
+  }
+}
+
+/* Form weight inputs — placeholder color + hide number spinners */
+.form-weight-input::placeholder                       { color: #6b7280; }
+.form-weight-input::-webkit-outer-spin-button,
+.form-weight-input::-webkit-inner-spin-button         { -webkit-appearance: none; margin: 0; }
+.form-weight-input[type=number]                       { -moz-appearance: textfield; }
+
+/* Global utility to hide scrollbar if needed */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Animated CTA button ────────────────────────────────────────── */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer sweep */
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.32) 50%,
+    transparent 70%
+  );
+  transform: translateX(-160%);
+  transition: none;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.btn-animated:hover::before {
+  transform: translateX(200%);
+  transition: transform 0.55s ease;
+}
+
+/* Glow + lift */
+.btn-animated:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.14);
+}
