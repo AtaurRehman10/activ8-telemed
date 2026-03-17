@@ -4,9 +4,6 @@ node_modules/
 # Production
 dist/
 
-# Assets downloaded via download-assets.mjs
-public/assets/
-
 # IDE files
 .vscode/
 .idea/
