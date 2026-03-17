@@ -128,68 +128,53 @@ export default function Header() {
           </motion.div>
         </div>
 
-        {/* Right: image collage */}
-        <motion.div
-          {...fadeIn(0.2)}
+        {/* Right: image collage (Auto-scrolling Marquee) */}
+        <div
+          className="hero-collage"
           style={{
             flex: '1 1 42%',
             minWidth: 0,
+            height: 580,
+            overflow: 'hidden',
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gridTemplateRows: '110px 200px 150px',
-            gap: 10,
-            alignSelf: 'flex-start',
-            padding: '0',
+            gap: 20,
             position: 'relative',
-            top: -115,
+            top: -70,
+            maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
           }}
-          className="hero-collage"
         >
-          {/* food – top left, short */}
-          <motion.div
-            {...fadeIn(0.2)}
-            style={{ borderRadius: 20, overflow: 'hidden', gridColumn: '1', gridRow: '1', height: '100%' }}
-            className="transition-all duration-500 hover:scale-105"
-          >
-            <img src={imgHeroImg97} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          </motion.div>
+          {/* Column 1: Top to Bottom */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <motion.div
+              animate={{ y: ['-50%', '0%'] }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: 20 }}
+            >
+              {[imgHeroImg97, imgHeroImg98, imgHeroMain, imgHeroImg96, imgHeroImg95, imgHeroImg97, imgHeroImg98, imgHeroMain, imgHeroImg96, imgHeroImg95].map((img, idx) => (
+                <div key={idx} style={{ borderRadius: 24, overflow: 'hidden', height: 220, width: '100%' }} className="transition-all duration-500 hover:scale-[1.02]">
+                  <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
-          {/* man – top right, taller, spans rows 1-2 */}
-          <motion.div
-            {...fadeIn(0.4)}
-            style={{ borderRadius: 20, overflow: 'hidden', gridColumn: '2', gridRow: '1 / 3' }}
-            className="transition-all duration-500 hover:scale-105"
-          >
-            <img src={imgHeroImg98} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          </motion.div>
-
-          {/* woman – mid left, taller */}
-          <motion.div
-            {...fadeIn(0.3)}
-            style={{ borderRadius: 20, overflow: 'hidden', gridColumn: '1', gridRow: '2', height: '100%' }}
-            className="transition-all duration-500 hover:scale-105"
-          >
-            <img src={imgHeroMain} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          </motion.div>
-
-          {/* injection – bottom left */}
-          <motion.div
-            {...fadeIn(0.6)}
-            style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '1.6 / 1', gridColumn: '1', gridRow: '3' }}
-            className="transition-all duration-500 hover:scale-105"
-          >
-            <img src={imgHeroImg96} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          </motion.div>
-
-          {/* pens – bottom right */}
-          <motion.div
-            {...fadeIn(0.5)}
-            style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '0.85 / 1', gridColumn: '2', gridRow: '3' }}
-            className="transition-all duration-500 hover:scale-105"
-          >
-            <img src={imgHeroImg95} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          </motion.div>
-        </motion.div>
+          {/* Column 2: Bottom to Top */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <motion.div
+              animate={{ y: ['0%', '-50%'] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: 20 }}
+            >
+              {[imgHeroImg96, imgHeroMain, imgHeroImg95, imgHeroImg97, imgHeroImg98, imgHeroImg96, imgHeroMain, imgHeroImg95, imgHeroImg97, imgHeroImg98].map((img, idx) => (
+                <div key={idx} style={{ borderRadius: 24, overflow: 'hidden', height: 260, width: '100%' }} className="transition-all duration-500 hover:scale-[1.02]">
+                  <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* ── Trust bar ── */}

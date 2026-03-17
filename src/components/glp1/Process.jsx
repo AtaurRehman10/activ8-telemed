@@ -5,10 +5,10 @@ import TiltCard from '../shared/TiltCard'
 const PJS = { fontFamily: "'Plus Jakarta Sans', sans-serif" }
 
 const slideUp = (delay = 0) => ({
-  initial:     { opacity: 0, y: 40 },
+  initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport:    { once: true, amount: 0.15 },
-  transition:  { duration: 0.65, ease: 'easeOut', delay },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.65, ease: 'easeOut', delay },
 })
 
 export default function Process() {
@@ -52,29 +52,32 @@ export default function Process() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: '5%',
-              padding: '48px 56px',
+              gap: '20px',
+              padding: '65px 8%',
               boxSizing: 'border-box',
+              maxHeight: 450,
             }}>
-              {/* Text */}
-              <div className="process-step1-text" style={{ flex: '1 1 40%', display: 'flex', flexDirection: 'column', gap: 20, position: 'relative', zIndex: 1 }}>
-                <h3 style={{ ...PJS, fontWeight: 700, fontSize: 'clamp(24px, 3vw, 40px)', lineHeight: 1.2, letterSpacing: -1.2, color: '#1f2937', margin: 0 }}>
-                  Take the Assessment
+              {/* Left: Headline */}
+              <div className="process-step1-left" style={{ flex: '1 1 30%', display: 'flex', justifyContent: 'flex-start', alignSelf: 'flex-start' }}>
+                <h3 style={{ ...PJS, fontWeight: 700, fontSize: 'clamp(32px, 4vw, 40px)', lineHeight: 1.05, letterSpacing: -2, color: '#1f2937', margin: 0, maxWidth: 320 }}>
+                  Take the <br /> Assessment
                 </h3>
-                <p className="process-step1-p" style={{ ...PJS, fontWeight: 500, fontSize: 'clamp(15px, 1.4vw, 22px)', lineHeight: 1.5, letterSpacing: -0.5, color: '#6b7280', margin: 0, maxWidth: 380, alignSelf: 'flex-end', textAlign: 'right' }}>
-                  Answer a few quick questions about your weight history, goals, and what you&apos;ve tried. Takes about 2 minutes.
-                </p>
               </div>
 
-              {/* Images */}
-              <div className="process-step1-img" style={{ flex: '0 0 45%', position: 'relative', height: 380, zIndex: 1 }}>
-                <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-                  <img
-                    alt=""
-                    src={imgAppScreen}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }}
-                  />
-                </div>
+              {/* Center: Image */}
+              <div className="process-step1-img" style={{ flex: '1 1 45%', position: 'relative', height: 420, zIndex: 1, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', alignSelf: 'flex-end', marginBottom: -110 }}>
+                <img
+                  alt=""
+                  src={imgAppScreen}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.3)', transformOrigin: 'bottom center' }}
+                />
+              </div>
+
+              {/* Right: Description */}
+              <div className="process-step1-right" style={{ flex: '1 1 30%', display: 'flex', justifyContent: 'flex-end', alignSelf: 'flex-end' }}>
+                <p className="process-step1-p" style={{ ...PJS, fontWeight: 500, fontSize: 'clamp(18px, 1.8vw, 18px)', lineHeight: 1.3, letterSpacing: -0.6, color: '#6b7280', margin: 0, maxWidth: 360, textAlign: 'right' }}>
+                  Answer a few quick questions about your weight history, goals, and what you&apos;ve tried. Takes about 2 minutes.
+                </p>
               </div>
             </div>
           </TiltCard>
@@ -167,14 +170,14 @@ export default function Process() {
             gap: 24px !important;
           }
 
-          .process-step1-text {
+          .process-step1-left, .process-step1-right {
             flex: unset !important;
             width: 100% !important;
-            gap: 12px !important;
+            text-align: left !important;
+            justify-content: flex-start !important;
           }
 
           .process-step1-p {
-            align-self: flex-start !important;
             text-align: left !important;
             max-width: 100% !important;
           }
