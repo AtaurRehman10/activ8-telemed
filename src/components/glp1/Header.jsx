@@ -119,7 +119,7 @@ export default function Header() {
               scale={1.05}
               glowColor="255,255,255"
               glowOpacity={0.22}
-              onClick={() => navigate('/form')}
+              onClick={() => navigate('/form?type=glp1')}
             >
               <span className="hero-btn-text" style={{ ...INT, fontWeight: 600, fontSize: 14, letterSpacing: -0.42, color: '#fff', whiteSpace: 'nowrap', textAlign: 'center', position: 'relative', zIndex: 1 }}>
                 START YOUR ASSESSMENT →

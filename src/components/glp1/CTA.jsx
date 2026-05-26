@@ -113,7 +113,7 @@ export default function CTA() {
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
             whileHover={{ scale: 1.06, y: -4 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/form?type=glp1')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             className="btn-animated"

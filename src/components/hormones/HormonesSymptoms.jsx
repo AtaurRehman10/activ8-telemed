@@ -185,7 +185,7 @@ export default function HormonesSymptoms() {
             initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={VP} transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
             whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/form?type=hormones')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             style={{

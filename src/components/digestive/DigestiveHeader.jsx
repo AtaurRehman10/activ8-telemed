@@ -106,7 +106,7 @@ export default function DigestiveHeader() {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.65 }}
             whileHover={{ scale: 1.06, y: -4 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/form?type=digestive')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             style={{

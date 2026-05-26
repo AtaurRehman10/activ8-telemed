@@ -125,7 +125,7 @@ export default function DigestiveCTA() {
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/form?type=digestive')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             className="cta-btn"

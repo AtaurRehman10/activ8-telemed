@@ -55,7 +55,7 @@ export default function DigestiveFAQ() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
             whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/form?type=digestive')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             className="dfaq-btn-desktop"
@@ -113,7 +113,7 @@ export default function DigestiveFAQ() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/form?type=digestive')}
             onMouseEnter={() => setBtnHovered(true)}
             onMouseLeave={() => setBtnHovered(false)}
             className="dfaq-btn-mobile"

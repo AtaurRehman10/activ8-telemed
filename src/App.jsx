@@ -89,11 +89,12 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/"          element={<Glp1LandingPage />} />
+        <Route path="/"          element={<Navigate to="/glp1" replace />} />
+        <Route path="/glp1"      element={<Glp1LandingPage />} />
         <Route path="/hormones"  element={<HormonesLandingPage />} />
         <Route path="/digestive" element={<DigestiveLandingPage />} />
         <Route path="/form"      element={<FormPage />} />
-        <Route path="*"          element={<Navigate to="/" replace />} />
+        <Route path="*"          element={<Navigate to="/glp1" replace />} />
       </Routes>
     </BrowserRouter>
   )
