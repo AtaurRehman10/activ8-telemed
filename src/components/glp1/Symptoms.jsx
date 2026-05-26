@@ -228,16 +228,16 @@ export default function Symptoms() {
       {/* Mobile responsive */}
       <style>{`
         @media (max-width: 768px) {
-          .symptoms-center-img { 
-            display: flex !important; 
+          .symptoms-center-img {
+            display: flex !important;
             order: 2 !important;
             flex: unset !important;
             width: 100% !important;
             min-height: unset !important;
-            height: 350px !important;
+            height: 500px !important;
             margin: 20px 0 !important;
           }
-          
+
           .symptoms-center-img > div {
             position: relative !important;
             width: 100% !important;
@@ -250,7 +250,9 @@ export default function Symptoms() {
 
           .symptoms-center-img img {
             height: 100% !important;
-            object-position: center 15% !important;
+            object-position: center 5% !important;
+            transform: scale(1.28) !important;
+            transform-origin: center top !important;
           }
 
           .symptoms-columns {
@@ -263,23 +265,40 @@ export default function Symptoms() {
             flex: unset !important;
             width: 100% !important;
             gap: 24px !important;
+            align-items: center !important;
           }
 
           .symptoms-col:first-child {
             order: 1 !important;
           }
-          
+
           .symptoms-col:last-child {
             order: 3 !important;
           }
 
-          .symptom-item-left {
-            flex-direction: row-reverse !important;
-            justify-content: flex-end !important;
+          .symptom-item-left,
+          .symptom-item-right {
+            flex-direction: row !important;
+            justify-content: center !important;
+            width: 100% !important;
           }
 
-          .symptom-item-left p {
+          .symptom-item-left p,
+          .symptom-item-right p {
             text-align: left !important;
+          }
+
+          .symptom-item-left img,
+          .symptom-item-right img {
+            width: 48px !important;
+            height: 48px !important;
+            min-width: 48px !important;
+            min-height: 48px !important;
+            object-fit: contain !important;
+          }
+
+          .symptoms-center-img {
+            align-self: center !important;
           }
 
           .symptoms-btn {

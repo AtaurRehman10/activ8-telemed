@@ -210,39 +210,41 @@ export default function HormonesSymptoms() {
       {/* Mobile responsive */}
       <style>{`
         @media (max-width: 768px) {
-          .symptoms-center-img { 
-            display: flex !important; 
+          .symptoms-center-img {
+            display: flex !important;
             justify-content: center !important;
             align-items: center !important;
             order: 2 !important;
             flex: unset !important;
             width: 100% !important;
             min-height: unset !important;
-            height: 380px !important;
+            height: 400px !important;
             margin: 10px 0 !important;
           }
-          
+
           .symptoms-center-img > div {
             position: relative !important;
+            inset: unset !important;
             width: 100% !important;
             height: 100% !important;
             border-radius: 24px !important;
-            WebkitMaskImage: none !important;
-            maskImage: none !important;
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
             box-shadow: none !important;
-            margin-top: 0 !important;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
           }
 
           .symptoms-center-img img {
-            width: auto !important;
-            max-width: 100% !important;
+            display: block !important;
+            margin: 0 auto !important;
+            width: 100% !important;
             height: 100% !important;
             object-fit: contain !important;
-            object-position: center !important;
+            object-position: center center !important;
             transform: scale(1.1) !important;
+            transform-origin: center center !important;
           }
 
           .symptoms-columns {
