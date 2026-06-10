@@ -88,3 +88,4 @@ for (const asset of assets) {
   }
 }
 console.log(`\nDone: ${ok} ok, ${fail} failed`)
+//hello world
