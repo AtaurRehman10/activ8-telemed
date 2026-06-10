@@ -13,7 +13,7 @@ export default function HormonesLandingPage() {
       <HormonesHeader />
       <HormonesSymptoms />
       <HormonesProcess />
-      <Provider />
+      <Provider quote="Hormone imbalances don't have a one-size-fits-all fix. I look at your full picture — your labs, your symptoms, your life — so we can build a protocol that actually restores how you're supposed to feel." />
       <Reviews />
       <HormonesFAQ />
       <HormonesCTA />

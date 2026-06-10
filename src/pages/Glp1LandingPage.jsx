@@ -13,7 +13,7 @@ export default function Glp1LandingPage() {
       <Header />
       <Symptoms />
       <Process />
-      <Provider />
+      <Provider quote="I don't prescribe cookie-cutter weight loss plans. Every protocol I build starts with understanding who you are and what your body actually needs." />
       <Reviews />
       <FAQ />
       <CTA />

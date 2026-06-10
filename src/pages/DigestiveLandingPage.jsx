@@ -13,7 +13,7 @@ export default function DigestiveLandingPage() {
       <DigestiveHeader />
       <DigestiveSymptoms />
       <DigestiveProcess />
-      <Provider />
+      <Provider quote="Most gut problems get band-aids, not answers. I dig into your microbiome, your triggers, and your history — because lasting healing only happens when you find the real cause." />
       <Reviews />
       <DigestiveFAQ />
       <DigestiveCTA />

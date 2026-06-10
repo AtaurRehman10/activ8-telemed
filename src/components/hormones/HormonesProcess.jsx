@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { imgAppScreen, imgConsult, imgRect51, imgHormonesStep3 } from '../../assets'
+import { imgAppScreen, imgConsult, imgRect51, imgPill } from '../../assets'
 import TiltCard from '../shared/TiltCard'
 
 const PJS = { fontFamily: "'Plus Jakarta Sans', sans-serif" }
@@ -141,8 +141,8 @@ export default function HormonesProcess() {
                 }}>
                   <img
                     alt=""
-                    src={imgHormonesStep3}
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
+                    src={imgPill}
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                   />
                 </div>
 

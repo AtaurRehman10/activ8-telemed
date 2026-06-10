@@ -34,7 +34,7 @@ const fadeUp = (delay = 0) => ({
   transition:  { duration: 0.6, ease: 'easeOut', delay },
 })
 
-export default function Provider() {
+export default function Provider({ quote }) {
   return (
     <section style={{ width: '100%', padding: '0 16px', boxSizing: 'border-box' }}>
       {/* Teal background wrapper */}
@@ -102,7 +102,7 @@ export default function Provider() {
                 textAlign: 'right',
               }}
             >
-              I don&apos;t prescribe cookie-cutter weight loss plans. Every protocol I build starts with understanding who you are and what your body actually needs.
+              {quote}
             </motion.p>
           </div>
 
@@ -255,7 +255,7 @@ export default function Provider() {
                   color: '#ffffff',
                 }}
               >
-                Ariel Causey is a board-certified Nurse Practitioner specializing in metabolic health, GLP-1 therapy, and functional medicine. She&apos;s spent years helping patients who&apos;ve been failed by fad diets and one-size-fits-all programs. At Activ8, she takes the time to understand your unique biology — because a plan that works for someone else might not work for you. When you work with Ariel, you&apos;re not a chart number. You&apos;re a person with a story, and she&apos;s going to listen to every word of it.
+                Ariel Causey is a board-certified Nurse Practitioner specializing in metabolic health, hormone optimization, and functional medicine. She&apos;s spent years helping patients who&apos;ve been dismissed by conventional medicine and failed by one-size-fits-all programs. At Activ8, she takes the time to understand your unique biology — because a plan that works for someone else might not work for you. When you work with Ariel, you&apos;re not a chart number. You&apos;re a person with a story, and she&apos;s going to listen to every word of it.
               </motion.p>
             </div>
           </div>

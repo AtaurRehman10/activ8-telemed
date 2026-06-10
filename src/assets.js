@@ -65,6 +65,7 @@ export const imgHormonesIcon5       = '/assets/hormones-icon5.svg'
 export const imgHormonesIcon6       = '/assets/hormones-icon6.svg'
 export const imgHormonesCtaBg       = '/assets/hormones-cta-bg.jpg'
 export const imgHormonesStep3       = '/assets/hormones-step3.jpg'
+export const imgPill                = '/assets/pill.png'
 
 // Digestive Landing Page
 export const imgDigestiveHero1      = '/assets/digestive-hero1.jpg'

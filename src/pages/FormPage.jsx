@@ -29,7 +29,9 @@ export default function FormPage() {
   function saveAndAdvance(data) {
     const updated = { ...answers, ...data }
     setAnswers(updated)
-    if (step === 4 && data.triedGlp1 === 'no') {
+    if (type !== 'glp1' && step === 2) {
+      setStep(6)
+    } else if (step === 4 && data.triedGlp1 === 'no') {
       setStep(6)
     } else {
       setStep(s => s + 1)
@@ -43,7 +45,11 @@ export default function FormPage() {
   }
 
   function goBack() {
-    setStep(s => Math.max(0, s - 1))
+    if (type !== 'glp1' && step === 6) {
+      setStep(2)
+    } else {
+      setStep(s => Math.max(0, s - 1))
+    }
   }
 
   if (step === 0) return <WelcomeScreen onStart={() => setStep(1)} />

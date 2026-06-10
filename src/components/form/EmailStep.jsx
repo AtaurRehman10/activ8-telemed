@@ -162,7 +162,7 @@ export default function EmailStep({ onBack, onSubmit }) {
               margin: '0 0 clamp(20px, 3vw, 36px)',
             }}
           >
-            We&rsquo;ll send your personalized plan and consultation details here.
+            It sounds like we&rsquo;re a great fit! Schedule an appointment with our team.
           </motion.p>
 
           {/* Two fields side by side on wide screens, stacked on mobile */}
